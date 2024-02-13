@@ -7,9 +7,9 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
-app.use("/", (req, res) => {
-  res.send("server is running...");
-});
+// app.use("/", (req, res) => {
+//   res.send("server is running...");
+// });
 //routes
 
 //Product

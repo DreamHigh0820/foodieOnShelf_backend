@@ -10,6 +10,20 @@ const pool = new Pool({
   // connectionString: process.env.POSTGRES_URL,
 });
 
+pool.connect((err, client, release) => {
+  if (err) {
+    // Handle connection error
+    console.error('Error acquiring client', err.stack);
+  } else {
+    console.log('Connected to the database!');
+    // Do something with the client
+    // ...
+
+    // Release the client back to the pool
+    release();
+  }
+});
+
 // const pool = new Pool({
 //   user: "postgres",
 //   password: "baka",
